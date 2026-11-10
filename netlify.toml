@@ -1,0 +1,12 @@
+[build]
+  command = "npm run build"
+  publish = "build"
+
+[build.environment]
+  # Pin Node.js to an LTS release that Create React App (react-scripts 5) supports.
+  NODE_VERSION = "22"
+  # Skip CRA's ESLint webpack plugin during deploys. With no lockfile committed, fresh
+  # installs can resolve ESLint plugin versions that break the "react-app/jest" config
+  # ("Environment key 'jest/globals' is unknown"), failing the build. Linting still
+  # runs in local development and editors.
+  DISABLE_ESLINT_PLUGIN = "true"
